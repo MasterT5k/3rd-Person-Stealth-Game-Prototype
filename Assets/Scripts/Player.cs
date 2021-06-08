@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,19 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private GameObject _clickEffect = null;
+    [SerializeField]
+    private GameObject _coinPrefab = null;
+    [SerializeField]
+    private AudioClip _coinSound = null;
+    [SerializeField]
+    private LayerMask _floorLayer;
 
+    private bool _coinUsed = false;
     private bool _isMoving = false;
     private NavMeshAgent _agent = null;
     private Animator _anim = null;
+
+    public static event Action<Vector3> OnCoinThrow;
 
     void Start()
     {
@@ -56,6 +66,20 @@ public class Player : MonoBehaviour
             {
                 _anim.SetBool("Walk", false);
                 _isMoving = false;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(1) && _coinUsed == false)
+        {
+            Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(rayOrigin, out hitInfo, 500f, _floorLayer))
+            {
+                _coinUsed = true;
+                _anim.SetTrigger("Throw");
+                OnCoinThrow?.Invoke(hitInfo.point);
+                Instantiate(_coinPrefab, hitInfo.point, Quaternion.identity);
+                AudioSource.PlayClipAtPoint(_coinSound, hitInfo.point);
             }
         }
     }

@@ -16,6 +16,17 @@ public class GuardAI : MonoBehaviour
     private NavMeshAgent _agent = null;
     private Animator _anim = null;
     private bool _targetReached = false;
+    private bool _movingToCoin = false;
+
+    void OnEnable()
+    {
+        Player.OnCoinThrow += MoveToCoin;
+    }
+
+    void OnDisable()
+    {
+        Player.OnCoinThrow -= MoveToCoin;
+    }
 
     void Start()
     {
@@ -35,13 +46,13 @@ public class GuardAI : MonoBehaviour
     {
         if (_waypoints.Count > 0)
         {
-            if (_waypoints[_currentIndex] != null)
+            if (_waypoints[_currentIndex] != null && _movingToCoin == false)
             {
                 _agent.SetDestination(_waypoints[_currentIndex].position);
             }
 
             float distance = Vector3.Distance(transform.position, _agent.destination);
-            if (distance <= _offsetDistance && _targetReached == false)
+            if (distance <= _offsetDistance && _targetReached == false && _movingToCoin == false)
             {
                 if (_currentIndex == 0 || _currentIndex == _waypoints.Count - 1)
                 {
@@ -74,6 +85,12 @@ public class GuardAI : MonoBehaviour
                     }
                 }
             }
+            else if (distance <= _offsetDistance && _targetReached == false && _movingToCoin == true)
+            {
+                _targetReached = true;
+                _anim.SetBool("Idle", true);
+                StartCoroutine(PauseMovementRoutine());
+            }
         }
     }
 
@@ -83,6 +100,13 @@ public class GuardAI : MonoBehaviour
         yield return new WaitForSeconds(randomWait);
         _targetReached = false;
         _anim.SetBool("Idle", false);
+
+        if (_movingToCoin == true)
+        {
+            _movingToCoin = false;
+            yield break;
+        }
+
         if (_reverse == false)
         {
             _currentIndex++;
@@ -91,5 +115,13 @@ public class GuardAI : MonoBehaviour
         {
             _currentIndex--;
         }
+    }
+
+    void MoveToCoin(Vector3 coinPosition)
+    {
+        _targetReached = false;
+        _anim.SetBool("Idle", false);
+        _movingToCoin = true;
+        _agent.SetDestination(coinPosition);
     }
 }
