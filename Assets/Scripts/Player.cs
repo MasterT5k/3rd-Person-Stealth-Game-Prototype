@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         {
             Ray rayOrigin = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-            if (Physics.Raycast(rayOrigin, out hitInfo))
+            if (Physics.Raycast(rayOrigin, out hitInfo, 500f, _floorLayer))
             {
                 _agent.SetDestination(hitInfo.point);
                 GameObject effect = Instantiate(_clickEffect, hitInfo.point, Quaternion.identity);

@@ -15,7 +15,7 @@ public class VoiceOverTrigger : MonoBehaviour
             if (_voiceOverClip != null && _hasPlayed == false)
             {
                 _hasPlayed = true;
-                AudioSource.PlayClipAtPoint(_voiceOverClip, Camera.main.transform.position);
+                AudioManager.Instance.PlayVoiceOver(_voiceOverClip);
             }
         }
     }

@@ -17,6 +17,7 @@ public class GrabKeyCardActivation : MonoBehaviour
             {
                 _hasPlayed = true;
                 _cutsceneObj.SetActive(true);
+                GameManager.Instance.SetKeycard(true);
             }
         }
     }

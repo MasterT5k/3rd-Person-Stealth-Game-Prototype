@@ -10,6 +10,8 @@ public class GuardAI : MonoBehaviour
     [SerializeField]
     private float _offsetDistance = 1f;
     [SerializeField]
+    private float _coinDetectionDistance = 100f;
+    [SerializeField]
     private List<Transform> _waypoints = new List<Transform>();
     private bool _reverse = false;
     private int _currentIndex;
@@ -119,6 +121,11 @@ public class GuardAI : MonoBehaviour
 
     void MoveToCoin(Vector3 coinPosition)
     {
+        float distance = Vector3.Distance(transform.position, coinPosition);
+        if (distance > _coinDetectionDistance)
+        {
+            return;
+        }
         _targetReached = false;
         _anim.SetBool("Idle", false);
         _movingToCoin = true;
