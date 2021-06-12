@@ -55,7 +55,9 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void QuitGame()
     {
-        EditorApplication.ExitPlaymode();
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode(); 
+#endif
         Application.Quit();
     }
 }
