@@ -4032,7 +4032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &175827660
 Transform:
   m_ObjectHideFlags: 0
@@ -4081,6 +4081,8 @@ PlayableDirector:
     value: {fileID: 2121624606}
   - key: {fileID: 6922883828340244993, guid: 2c8108decb02b66499d74a0369675384, type: 2}
     value: {fileID: 141049007}
+  - key: {fileID: 6634594256723384134, guid: 2c8108decb02b66499d74a0369675384, type: 2}
+    value: {fileID: 1060428134}
   m_ExposedReferences:
     m_References:
     - 6d2692f710e2e64459c3886e0afd3862: {fileID: 537481308}
@@ -9656,7 +9658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.14246
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9668,7 +9670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51.459938
+      value: -51.49
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11458,7 +11460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 312653847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82485c9adb1b8c499307dddfb2e1b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a34be61e593b2c469bd67a68cbaedd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _voiceOverClip: {fileID: 8300000, guid: 93819a911deb64462ae8d7c897f62875, type: 3}
@@ -18279,7 +18281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 645846098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82485c9adb1b8c499307dddfb2e1b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a34be61e593b2c469bd67a68cbaedd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _voiceOverClip: {fileID: 8300000, guid: ccb80d0aa4aa04accbd1fd681182e54e, type: 3}
@@ -19606,7 +19608,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 725865530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66815529cb21df84b8d0cfdffcf467af, type: 3}
+  m_Script: {fileID: 11500000, guid: e66f536e24c09cf40866c4fa6edc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTrans: {fileID: 113185344}
@@ -20424,7 +20426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 749122373}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66815529cb21df84b8d0cfdffcf467af, type: 3}
+  m_Script: {fileID: 11500000, guid: e66f536e24c09cf40866c4fa6edc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTrans: {fileID: 241050945}
@@ -27780,12 +27782,27 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 6c35c380ec6291b41ab906c6130913da, type: 2}
+    - {fileID: 11400000, guid: 456b23cb20d584e43b6fa535d1bcc586, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1060428135}
           m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
           m_MethodName: BeginMusic
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1060428135}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: StopVoiceOver
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -29108,7 +29125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120702337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66815529cb21df84b8d0cfdffcf467af, type: 3}
+  m_Script: {fileID: 11500000, guid: e66f536e24c09cf40866c4fa6edc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTrans: {fileID: 959008484}
@@ -34959,7 +34976,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460912863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c63faeeacf0d88488d0639326324db0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ae4ab14b2209194eb8ca2479ff4e993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _winCutscene: {fileID: 264250758}
@@ -35397,7 +35414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1469631501}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82485c9adb1b8c499307dddfb2e1b96, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a34be61e593b2c469bd67a68cbaedd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _voiceOverClip: {fileID: 8300000, guid: c9060da6caadb43ee91282de92df2963, type: 3}
@@ -44303,11 +44320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.14246
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.137122
+      value: -10.137
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44315,7 +44332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51.459938
+      value: -51.489998
       objectReference: {fileID: 0}
     - target: {fileID: 4944537963866302, guid: c2d08cfc453eb40219a17396f30a8c23, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50098,7 +50115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1993299771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66815529cb21df84b8d0cfdffcf467af, type: 3}
+  m_Script: {fileID: 11500000, guid: e66f536e24c09cf40866c4fa6edc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTrans: {fileID: 293455559}
@@ -50292,7 +50309,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998284636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66815529cb21df84b8d0cfdffcf467af, type: 3}
+  m_Script: {fileID: 11500000, guid: e66f536e24c09cf40866c4fa6edc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTrans: {fileID: 1199145690}
@@ -51443,8 +51460,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043896029}
-  m_LocalRotation: {x: 0.0029944256, y: 0.05755988, z: 0.00016575353, w: -0.9983376}
-  m_LocalPosition: {x: -4.3701625, y: 3.3748624, z: -3.7842066}
+  m_LocalRotation: {x: -0.080976084, y: 0.41112092, z: 0.036823336, w: 0.90840536}
+  m_LocalPosition: {x: -8.108751, y: -0.49, z: -88.73077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52275,7 +52292,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2073984742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a3b729a7415234bb8afed2b67ea2da, type: 3}
+  m_Script: {fileID: 11500000, guid: 776603162f5a02a49bc500e4c33d4a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cutsceneObj: {fileID: 427483526}
@@ -52397,7 +52414,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2077180757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66815529cb21df84b8d0cfdffcf467af, type: 3}
+  m_Script: {fileID: 11500000, guid: e66f536e24c09cf40866c4fa6edc3e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTrans: {fileID: 1341338661}

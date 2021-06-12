@@ -28,4 +28,12 @@ public class AudioManager : MonoSingleton<AudioManager>
             _voiceOverSource.Play();
         }
     }
+
+    public void StopVoiceOver()
+    {
+        if (_voiceOverSource.isPlaying == true)
+        {
+            _voiceOverSource.Stop();
+        }
+    }
 }
